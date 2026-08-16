@@ -1,6 +1,5 @@
 "use client";
 
-import Image from "next/image";
 import { useState } from "react";
 import Link from "next/link";
 
@@ -24,9 +23,7 @@ export default function Home() {
           </p>
         </div>
 
-        {/* ==================================================
-            MENU DESKTOP
-        ================================================== */}
+        {/* MENU DESKTOP */}
         <div className="hidden items-center gap-8 text-sm md:flex">
           <Link
             href="#home"
@@ -57,9 +54,7 @@ export default function Home() {
           </Link>
         </div>
 
-        {/* ==================================================
-            HAMBURGER MOBILE
-        ================================================== */}
+        {/* HAMBURGER MOBILE */}
         <button
           type="button"
           onClick={() => setIsMenuOpen(!isMenuOpen)}
@@ -70,9 +65,7 @@ export default function Home() {
           {isMenuOpen ? "✕" : "☰"}
         </button>
 
-        {/* ==================================================
-            MENU MOBILE
-        ================================================== */}
+        {/* MENU MOBILE */}
         {isMenuOpen && (
           <div className="absolute left-6 right-6 top-full mt-2 rounded-2xl bg-[#F5EFE6] p-4 text-[#2B2118] shadow-xl md:hidden">
             <div className="flex flex-col gap-2">
@@ -85,7 +78,7 @@ export default function Home() {
               </Link>
 
               <Link
-                href="#tentang"
+                href="/tentang"
                 onClick={() => setIsMenuOpen(false)}
                 className="rounded-xl px-4 py-3 transition hover:bg-[#E5D8C8]"
               >
@@ -126,7 +119,9 @@ export default function Home() {
         <h2 className="max-w-4xl text-5xl font-bold leading-tight md:text-7xl">
           COFFEE J&apos; FIVE
           <br />
-          <span className="text-[#C8A27A]">SINGKI&apos;</span>
+          <span className="text-[#C8A27A]">
+            SINGKI&apos;
+          </span>
         </h2>
 
         <p className="mt-6 max-w-xl text-sm leading-7 text-[#E5D8C8] sm:text-base md:text-lg">
@@ -180,6 +175,17 @@ export default function Home() {
             Dengan suasana yang nyaman dan hangat, kami ingin setiap kunjungan
             menjadi bagian dari cerita dan kebersamaan yang menyenangkan.
           </p>
+
+          {/* TOMBOL LIHAT LEBIH LANJUT */}
+          <div className="mt-10">
+            <Link
+              href="/tentang"
+              className="inline-flex items-center justify-center rounded-full bg-[#2B2118] px-8 py-4 text-sm font-semibold text-[#F5EFE6] transition duration-300 hover:-translate-y-1 hover:bg-[#5A4636] hover:shadow-lg"
+            >
+              Lihat Lebih Lanjut
+              <span className="ml-2">→</span>
+            </Link>
+          </div>
         </div>
       </section>
 
@@ -214,11 +220,9 @@ export default function Home() {
           <div className="mt-12 grid gap-6 md:grid-cols-3">
             {/* CARD 1 */}
             <div className="overflow-hidden rounded-2xl bg-[#FFF8F0] p-5 shadow-sm transition duration-300 hover:-translate-y-1 hover:shadow-lg">
-              <Image
+              <img
                 src="/images/kopi-susu-singki.png"
                 alt="Kopi Susu Singki'"
-                width={600}
-                height={400}
                 className="h-64 w-full rounded-xl object-cover"
               />
 
@@ -238,11 +242,9 @@ export default function Home() {
 
             {/* CARD 2 */}
             <div className="overflow-hidden rounded-2xl bg-[#FFF8F0] p-5 shadow-sm transition duration-300 hover:-translate-y-1 hover:shadow-lg">
-              <Image
+              <img
                 src="/images/nasi-goreng-spesial.png"
                 alt="Nasi Goreng Spesial"
-                width={600}
-                height={400}
                 className="h-64 w-full rounded-xl object-cover"
               />
 
@@ -262,11 +264,9 @@ export default function Home() {
 
             {/* CARD 3 */}
             <div className="overflow-hidden rounded-2xl bg-[#FFF8F0] p-5 shadow-sm transition duration-300 hover:-translate-y-1 hover:shadow-lg">
-              <Image
+              <img
                 src="/images/mie-singki.png"
                 alt="Mie Singki'"
-                width={600}
-                height={400}
                 className="h-64 w-full rounded-xl object-cover"
               />
 
@@ -341,8 +341,8 @@ export default function Home() {
                 </h3>
 
                 <p className="mt-3 max-w-sm leading-6 text-[#5A4636]">
-                  Klik tombol di bawah untuk melihat lokasi kami langsung melalui
-                  Google Maps.
+                  Klik tombol di bawah untuk melihat lokasi kami
+                  langsung melalui Google Maps.
                 </p>
 
                 <a
@@ -376,8 +376,8 @@ export default function Home() {
               </p>
 
               <p className="mt-5 max-w-sm text-sm leading-6 text-[#E5D8C8]">
-                Hangatkan cerita, nikmati setiap rasa dalam suasana yang nyaman,
-                sederhana, dan penuh kebersamaan.
+                Hangatkan cerita, nikmati setiap rasa dalam suasana yang
+                nyaman, sederhana, dan penuh kebersamaan.
               </p>
             </div>
 
@@ -425,9 +425,13 @@ export default function Home() {
               </h3>
 
               <div className="mt-4 space-y-3 text-sm text-[#E5D8C8]">
-                <p>📍 Singki&apos;, Angkola Timur</p>
+                <p>
+                  📍 Singki&apos;, Angkola Timur
+                </p>
 
-                <p>🕘 Setiap Hari, 09.00 - 22.00 WIB</p>
+                <p>
+                  🕘 Setiap Hari, 09.00 - 22.00 WIB
+                </p>
 
                 <a
                   href="https://maps.app.goo.gl/QpUURfKrAK5fJtej7"
@@ -450,7 +454,9 @@ export default function Home() {
               © 2026 COFFEE J&apos; FIVE SINGKI&apos;. All rights reserved.
             </p>
 
-            <p>Hangatkan cerita, nikmati setiap rasa.</p>
+            <p>
+              Hangatkan cerita, nikmati setiap rasa.
+            </p>
           </div>
         </div>
       </footer>
